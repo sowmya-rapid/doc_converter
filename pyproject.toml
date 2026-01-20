@@ -1,0 +1,15 @@
+[project]
+name = "doc-conversion-mcp"
+version = "0.1.0"
+description = "MCP server for document conversion using marker-pdf and pandoc"
+requires-python = ">=3.10"
+
+dependencies = [
+    "mcp",
+    "pypandoc",
+    "marker-pdf",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

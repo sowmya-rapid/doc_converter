@@ -30,7 +30,7 @@ doc-conversion-mcp/
 ## Prerequisites
 - Python 3.10+
 - Pandoc installed
-- pdflatex
+- LaTeX distribution (MiKTeX / TeX Live / MacTeX) with pdflatex
 - uv package manager
 
 Check:
@@ -56,4 +56,5 @@ All file paths must be absolute.
 
 ## Status
 Stable and working.
+
 

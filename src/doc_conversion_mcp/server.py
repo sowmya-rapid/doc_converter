@@ -1,6 +1,7 @@
 from pathlib import Path
 import pypandoc
 from mcp.server.fastmcp import FastMCP
+import pdfplumber
 
 mcp = FastMCP("Doc Conversion MCP")
 
@@ -46,6 +47,23 @@ def markdown_to_pdf(md_path: str) -> dict:
 
     pypandoc.convert_file(str(md), "pdf", outputfile=str(out))
     return {"pdf": str(out)}
+
+
+
+
+# -------- pdf → Markdown --------
+@mcp.tool()
+def pdf_to_markdown(pdf_path: str) -> dict:
+    pdf = ensure_absolute(pdf_path)
+    md_path = pdf.with_suffix(".md")
+
+    with pdfplumber.open(pdf) as p, open(md_path, "w", encoding="utf-8") as out:
+        for page in p.pages:
+            text = page.extract_text()
+            if text:
+                out.write(text + "\n\n")
+
+    return {"markdown": str(md_path)}
 
 
 if __name__ == "__main__":

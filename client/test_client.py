@@ -16,11 +16,11 @@ async def main():
             await session.initialize()
             print("INITIALIZED")
 
-            # DOCX → Markdown (WORKS)
+            # PDF → Markdown (WORKS)
             res = await session.call_tool(
-                "docx_to_markdown",
+                "pdf_to_markdown",
                 {
-                    "docx_path": r"C:\Users\sowmy\Downloads\sample_resume.docx"
+                    "pdf_path": r"C:\Users\sowmy\Downloads\sample_resume\sample_resume.pdf"
                 },
             )
 

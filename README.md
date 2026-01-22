@@ -6,6 +6,7 @@ An MCP (Model Context Protocol) HTTP server for document conversion using Pandoc
 - DOCX → Markdown
 - Markdown → DOCX
 - Markdown → PDF
+- PDF -> Markdown
 
 
 ## Tech Stack
@@ -56,5 +57,6 @@ All file paths must be absolute.
 
 ## Status
 Stable and working.
+
 
 
